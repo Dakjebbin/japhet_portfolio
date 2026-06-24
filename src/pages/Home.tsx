@@ -1,3 +1,4 @@
+import { motion } from "motion/react"
 import big_jay001 from "../assets/big_jay001.jpeg";
 import big_jay002 from "../assets/big_jay002.jpeg";
 import big_jay003 from "../assets/big_jay003.jpeg";
@@ -17,7 +18,12 @@ export default function Home() {
     <main className="grid min-h-screen place-items-center bg-smoke bg-white md:px-6 px-3 md:py-12 py-6">
       <div className="w-full max-w-card overflow-hidden rounded-2xl bg-paper shadow-[0_40px_120px_rgba(0,0,0,0.55)]">
         {/* Header */}
-        <header className="flex items-center gap-8 bg-paper px-9.5 py-5.5">
+        <motion.header
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ amount: 0.2 }}
+        className="flex items-center gap-8 bg-paper px-9.5 py-5.5">
           <span className="whitespace-nowrap font-script text-3xl leading-none text-ink">
            BIG JAY
           </span>
@@ -45,7 +51,7 @@ export default function Home() {
               </button>
             ))}
           </div>
-        </header>
+        </motion.header>
 
         {/* Hero */}
         <section className="relative flex h-135 max-md:h-115">
@@ -70,11 +76,16 @@ export default function Home() {
           </div>
 
           {/* Overlapping heading */}
-          <h1 className="absolute left-11 top-10 z-4 font-display text-[58px] font-extrabold leading-[0.92] tracking-[-0.01em] text-ink [text-shadow:0_1px_0_rgba(255,255,255,0.4)] max-md:left-7 max-md:top-7 max-md:text-[40px] md:text-black text-[#f3f2f2]">
+          <motion.h1 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ amount: 0.2 }}
+          className="absolute left-11 top-10 z-4 font-display text-[58px] font-extrabold leading-[0.92] tracking-[-0.01em] text-ink [text-shadow:0_1px_0_rgba(255,255,255,0.4)] max-md:left-7 max-md:top-7 max-md:text-[40px] md:text-black text-[#f3f2f2]">
           BIG JAY's
             <br />
            PHOTOGRAPHY
-          </h1>
+          </motion.h1>
 
           {/* Center portrait */}
           <figure className="absolute bottom-0 left-1/2 top-0 z-3 w-85 -translate-x-1/2 overflow-hidden max-md:w-50">
@@ -86,14 +97,19 @@ export default function Home() {
           </figure>
 
           {/* CTAs */}
-          <div className="absolute right-15 top-[48%] z-5 flex flex-col items-end gap-5 max-md:bottom-9 max-md:right-6 max-md:top-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ amount: 0.2 }}
+          className="absolute right-15 top-[48%] z-5 flex flex-col items-end gap-5 max-md:bottom-9 max-md:right-6 max-md:top-auto">
             <button className="cursor-pointer rounded-full border border-white/45 bg-transparent px-8.5 py-4 font-sans text-[15px] text-white uppercase tracking-[0.14em] transition hover:-translate-y-0.5 hover:bg-white/10 max-md:px-6 max-md:py-3 max-md:text-xs">
               See portfolio
             </button>
             <button className="mr-4.5 cursor-pointer rounded-full border border-paper bg-paper px-10 py-4 font-sans text-[15px] font-medium uppercase tracking-[0.14em] text-ink transition hover:-translate-y-0.5 hover:bg-white max-md:mr-0 max-md:px-7 max-md:py-3 max-md:text-xs">
               Order
             </button>
-          </div>
+          </motion.div>
         </section>
       </div>
     </main>
