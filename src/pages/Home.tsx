@@ -70,7 +70,7 @@ export default function Home() {
           </div>
 
           {/* Overlapping heading */}
-          <h1 className="absolute left-11 top-10 z-4 font-display text-[58px] font-extrabold leading-[0.92] tracking-[-0.01em] text-ink [text-shadow:0_1px_0_rgba(255,255,255,0.4)] max-md:left-7 max-md:top-7 max-md:text-[40px]">
+          <h1 className="absolute left-11 top-10 z-4 font-display text-[58px] font-extrabold leading-[0.92] tracking-[-0.01em] text-ink [text-shadow:0_1px_0_rgba(255,255,255,0.4)] max-md:left-7 max-md:top-7 max-md:text-[40px] md:text-black text-[#f3f2f2]">
           BIG JAY's
             <br />
            PHOTOGRAPHY
